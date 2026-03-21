@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bangla Fonts CDN - By Faisal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            color: #64748b;
+            margin-bottom: 40px;
+        }
+
+        .font-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .font-card {
+            background: var(--card);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            transition: transform 0.2s;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+
+        .font-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .font-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .font-preview {
+            font-size: 1.5rem;
+            margin: 15px 0;
+            color: var(--primary);
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .copy-btn {
+            background: #f1f5f9;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.9rem;
+            color: #94a3b8;
+        }
+
+        a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Bangla Fonts CDN</h1>
+    <p class="subtitle">Official CDN for <b>bangla_fonts</b> Flutter Package</p>
+
+    <div class="font-grid">
+        <div class="font-card">
+            <span class="font-name">Kalpurush</span>
+            <div class="font-preview">আমার সোনার বাংলা</div>
+            <button class="copy-btn" onclick="copyLink('fonts/kalpurush.ttf')">Copy Direct Link</button>
+        </div>
+
+        <div class="font-card">
+            <span class="font-name">Shadhinata</span>
+            <div class="font-preview">এবারে সংগ্রাম স্বাধীনতার সংগ্রাম</div>
+            <button class="copy-btn" onclick="copyLink('fonts/shadhinata.ttf')">Copy Direct Link</button>
+        </div>
+    </div>
+
+    <footer>
+        Developed by <a href="https://github.com/oxfaysal">Faysal (Loomixdev)</a> 
+    </footer>
+</div>
+
+<script>
+    function copyLink(path) {
+        const fullUrl = window.location.origin + window.location.pathname + path;
+        navigator.clipboard.writeText(fullUrl);
+        alert('Direct Link Copied: ' + fullUrl);
+    }
+</script>
+
+</body>
+</html>
