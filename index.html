@@ -36,11 +36,10 @@
         /* --- Hero Section --- */
         .hero-section {
             text-align: center;
-            padding: 60px 20px 80px;
+            padding: 60px 20px 60px;
             background: linear-gradient(135deg, #ffffff 0%, #e5e7eb 100%);
             border-radius: 0 0 40px 40px;
             box-shadow: var(--shadow-sm);
-            margin-bottom: 40px;
         }
 
         .pkg-badge {
@@ -57,7 +56,7 @@
 
         h1 {
             font-weight: 800;
-            font-size: clamp(2rem, 8vw, 3.2rem); /* Responsive Font Size */
+            font-size: clamp(2.2rem, 8vw, 3.2rem);
             margin: 10px 0;
             letter-spacing: -1.5px;
             color: #111827;
@@ -65,7 +64,7 @@
 
         .hero-section p {
             color: var(--text-muted);
-            font-size: clamp(1rem, 4vw, 1.15rem);
+            font-size: clamp(1rem, 4vw, 1.1rem);
             max-width: 600px;
             margin: 0 auto 25px;
         }
@@ -74,6 +73,7 @@
             display: flex;
             justify-content: center;
             gap: 15px;
+            margin-bottom: 40px;
         }
         
         .social-icon {
@@ -88,11 +88,26 @@
         }
         .social-icon:hover { transform: translateY(-3px); color: var(--primary); }
 
-        /* --- Responsive Projects Bar --- */
+        /* --- Hero Packages Section --- */
+        .hero-pkg-container {
+            margin-top: 30px;
+        }
+
+        .pkg-label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
         .projects-bar {
             max-width: 1000px;
-            margin: -30px auto 40px;
-            padding: 0 15px;
+            margin: 0 auto;
+            padding: 0 10px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -115,7 +130,7 @@
         .project-chip.pkg {
             background: white;
             color: var(--primary);
-            border: 1px solid rgba(1, 117, 194, 0.2);
+            border: 1px solid rgba(1, 117, 194, 0.15);
             box-shadow: var(--shadow-sm);
         }
 
@@ -123,12 +138,13 @@
             background: var(--primary);
             color: white;
             transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
 
-        /* --- Main Container --- */
+        /* --- Main Content --- */
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 50px auto;
             padding: 0 20px;
         }
         
@@ -141,7 +157,6 @@
             font-weight: 700;
         }
 
-        /* --- Responsive Grid --- */
         .font-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -215,20 +230,19 @@
         .btn-dl { background: #1e293b; color: white; }
         .btn-dl:hover { background: var(--primary); }
 
-        /* --- Footer --- */
         footer {
             text-align: center;
             padding: 60px 20px;
             color: var(--text-muted);
         }
 
-        /* --- Extra Small Devices Optimization --- */
+        /* --- Mobile Optimization --- */
         @media (max-width: 480px) {
-            .hero-section { padding: 40px 15px 60px; }
+            .hero-section { padding: 40px 15px 50px; }
             .font-grid { grid-template-columns: 1fr; }
             .projects-bar { gap: 8px; }
             .project-chip { font-size: 0.75rem; padding: 8px 12px; }
-            .action-btns { grid-template-columns: 1fr; } /* Stack buttons on very small screens */
+            .action-btns { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -239,34 +253,34 @@
         <img src="https://cdn.worldvectorlogo.com/logos/flutter.svg" width="16" alt="Flutter">
         <span style="margin-left: 8px; font-size: 0.7rem; font-weight: 700; color: var(--primary);">OFFICIAL FLUTTER PACKAGE</span>
     </a>
+
     <h1>Bangla Fonts <span style="color: var(--primary);">CDN</span></h1>
     <p>Modern Bengali Typography for Web & App Developers.</p>
     
     <div class="social-row">
-        <a href="https://github.com/oxfaysal" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-        <a href="https://web.facebook.com/0xfaysal" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
-        <a href="mailto:loomixdev@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/oxfaysal" target="_blank" class="social-icon" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://web.facebook.com/0xfaysal" target="_blank" class="social-icon" title="Facebook"><i class="fab fa-facebook"></i></a>
+        <a href="mailto:loomixdev@gmail.com" class="social-icon" title="Email"><i class="fas fa-envelope"></i></a>
     </div>
 
-    <div class="projects-bar">
-        <a href="https://pub.dev/packages/bangla_fonts" target="_blank" class="project-chip pkg">
-            <i class="fas fa-font"></i> bangla_fonts
-        </a>
-        <a href="https://pub.dev/packages/date_snap" target="_blank" class="project-chip pkg">
-            <i class="fas fa-calendar-alt"></i> date_snap
-        </a>
-        <a href="https://pub.dev/packages/custom_masonry_grid" target="_blank" class="project-chip pkg">
-            <i class="fas fa-th-large"></i> masonry_grid
-        </a>
-        <a href="https://pub.dev/packages/privacy_lens" target="_blank" class="project-chip pkg">
-            <i class="fas fa-shield-alt"></i> privacy_lens
-        </a>
+    <div class="hero-pkg-container">
+        <span class="pkg-label">Our Official Packages</span>
+        <div class="projects-bar">
+            <a href="https://pub.dev/packages/bangla_fonts" target="_blank" class="project-chip pkg">
+                <i class="fas fa-font"></i> bangla_fonts
+            </a>
+            <a href="https://pub.dev/packages/date_snap" target="_blank" class="project-chip pkg">
+                <i class="fas fa-calendar-alt"></i> date_snap
+            </a>
+            <a href="https://pub.dev/packages/custom_masonry_grid" target="_blank" class="project-chip pkg">
+                <i class="fas fa-th-large"></i> masonry_grid
+            </a>
+            <a href="https://pub.dev/packages/privacy_lens" target="_blank" class="project-chip pkg">
+                <i class="fas fa-shield-alt"></i> privacy_lens
+            </a>
+        </div>
     </div>
 </div>
-
-
-
-<br>
 
 <div class="container">
     <div class="section-title">
@@ -278,22 +292,22 @@
 <footer>
     <p>Developed with <i class="fa-solid fa-heart" style="color: #ef4444;"></i> by <b>Faysal (LoomixDev)</b></p>
     <div class="license-box">
-        <small>© 2026 LoomixDev. All font creators credited.</small>
+        <small>© 2026 LoomixDev. All font Creators credited.</small>
     </div>
 </footer>
 
 <script>
     const fonts = [
         { name: "Kalpurush", fileName: "kalpurush.ttf", preview: "আমার সোনার বাংলা" },
-        { name: "Shadhinata", fileName: "shadhinata.ttf", preview: "রক্তে গড়া বাংলাদেশ" },
+        { name: "Shadhinata", fileName: "shadhinata.ttf", preview: "রক্তে গড়া বাংলাদেশ" },
         { name: "Siyam Rupali", fileName: "siyamrupali.ttf", preview: "বাতাসে বহিছে প্রেম" },
         { name: "Nikosh", fileName: "nikosh.ttf", preview: "বাংলা আমাদের অহংকার" },
         { name: "Adorsho Lipi", fileName: "adorsholipi.ttf", preview: "বর্ণমালার সহজ পাঠ" },
         { name: "Li Adorno Irrit", fileName: "liadornoirrit.ttf", preview: "সৃজনশীল নতুন মাত্রা" },
         { name: "Mukti", fileName: "mukti.ttf", preview: "মুক্তির গানে প্রাণ" },
-        { name: "Sagar", fileName: "sagar.ttf", preview: "নীল দিগন্তের ছোঁয়া" },
-        { name: "Showpnocari", fileName: "showpnocari.ttf", preview: "স্বপ্নের ডানায় পথচলা" },
-        { name: "Sylheti", fileName: "sylheti.ttf", preview: "সিলেটি ভাষার মায়া" }
+        { name: "Sagar", fileName: "sagar.ttf", preview: "নীল দিগন্তের ছোঁয়া" },
+        { name: "Showpnocari", fileName: "showpnocari.ttf", preview: "স্বপ্নের ডানায় পথচলা" },
+        { name: "Sylheti", fileName: "sylheti.ttf", preview: "সিলেটি ভাষার মায়া" }
     ];
 
     const fontContainer = document.getElementById('font-container');
