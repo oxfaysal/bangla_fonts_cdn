@@ -5,19 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bangla Fonts CDN - By Faysal</title>
     
-    <style id="dynamic-fonts"></style> <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style id="dynamic-fonts"></style> 
+    <style>
         :root {
             --primary: #2563eb;
+            --primary-light: #eff6ff;
             --bg: #f8fafc;
-            --card: #ffffff;
-            --text: #1e293b;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg);
-            color: var(--text);
+            color: var(--text-main);
             margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -26,152 +34,198 @@
 
         .container {
             width: 90%;
-            max-width: 900px;
-            padding: 40px 20px;
+            max-width: 1000px;
+            padding: 60px 20px;
             text-align: center;
+        }
+
+        header {
+            margin-bottom: 50px;
         }
 
         h1 {
             font-weight: 800;
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #2563eb, #7c3aed);
+            font-size: 3.2rem;
+            margin: 0;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .font-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-top: 10px;
         }
 
+        .font-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        /* Modern Card Design */
         .font-card {
-            background: var(--card);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            background: var(--card-bg);
+            padding: 35px;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: left;
-            border: 1px solid #f1f5f9;
+            border: 1px solid rgba(255, 255, 255, 0.8);
             position: relative;
+            overflow: hidden;
         }
 
         .font-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
         }
 
+        /* Cloud Download Icon */
         .top-download-btn {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #eff6ff;
+            top: 25px;
+            right: 25px;
+            background: var(--primary-light);
             color: var(--primary);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
             display: flex;
             justify-content: center;
             align-items: center;
             text-decoration: none;
-            transition: all 0.2s;
-            font-size: 20px;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
         }
 
         .top-download-btn:hover {
             background: var(--primary);
             color: white;
-            transform: scale(1.1);
+            transform: rotate(-10deg) scale(1.1);
         }
 
         .font-name {
             font-weight: 700;
-            font-size: 1.3rem;
-            color: #334155;
+            font-size: 1.4rem;
+            color: var(--text-main);
+            margin-bottom: 25px;
             display: block;
-            margin-bottom: 20px;
         }
 
         .preview-box {
-            background: #fdfdfd;
-            padding: 25px 15px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            border: 1px solid #f1f5f9;
-            min-height: 80px;
+            background: #f1f5f9;
+            padding: 30px 20px;
+            border-radius: 18px;
+            margin-bottom: 25px;
+            border: 1px solid #e2e8f0;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: background 0.3s;
+        }
+
+        .font-card:hover .preview-box {
+            background: #ffffff;
         }
 
         .font-preview {
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             width: 100%;
             text-align: center;
-            overflow: hidden;
+            color: #0f172a;
             white-space: nowrap;
+            overflow: hidden;
             text-overflow: ellipsis;
         }
 
+        /* Modern Copy Button */
         .copy-btn {
             width: 100%;
             border: none;
-            background: #f1f5f9;
-            color: #475569;
-            padding: 12px;
-            border-radius: 10px;
+            background: #1e293b;
+            color: white;
+            padding: 14px;
+            border-radius: 14px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.2s;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .copy-btn:hover {
-            background: #2563eb;
-            color: white;
+            background: var(--primary);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+        }
+
+        .copy-btn i {
+            font-size: 1rem;
         }
 
         footer {
-            margin-top: 60px;
-            font-size: 0.9rem;
-            color: #94a3b8;
+            margin-top: 80px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
         }
-        footer a { color: var(--primary); text-decoration: none; font-weight: 600; }
+
+        footer b {
+            color: var(--text-main);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* Animation for Grid */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .font-card {
+            animation: fadeIn 0.6s ease forwards;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Bangla Fonts CDN</h1>
-    <p style="color: #64748b;">Official CDN for <b>bangla_fonts</b> Flutter Package</p>
+    <header>
+        <h1>Bangla Fonts CDN</h1>
+        <p class="subtitle">Official CDN for <b>bangla_fonts</b> Flutter Package</p>
+    </header>
 
     <div class="font-grid" id="font-container">
         </div>
 
     <footer>
-        Developed by <a href="https://github.com/oxfaysal"> Faysal (LoomixDev)</a> 
+        Developed with <i class="fa-solid fa-heart" style="color: #ef4444;"></i> by 
+        <a href="https://github.com/oxfaysal">Faysal (LoomixDev)</a>
     </footer>
 </div>
 
 <script>
-    // --- ১. আপনার ফন্টের লিস্ট এখানে অ্যাড করুন ---
+    // ১. আপনার ফন্টের লিস্ট এখানে অ্যাড করুন (সহজ এবং ক্লিন)
     const fonts = [
         { name: "Kalpurush", fileName: "kalpurush.ttf", preview: "আমার সোনার বাংলা" },
-        { name: "Shadhinata", fileName: "shadhinata.ttf", preview: "জয় বাংলা জয় বঙ্গবন্ধু" },
-        // নতুন ফন্ট অ্যাড করতে চাইলে নিচের লাইনটি কপি করে পেস্ট করুন:
-        // { name: "Nikosh", fileName: "nikosh.ttf", preview: "বাংলা আমাদের অহংকার" },
+        { name: "Shadhinata", fileName: "shadhinata.ttf", preview: "জয় বাংলা জয় বঙ্গবন্ধু" },
+        
     ];
 
     const fontContainer = document.getElementById('font-container');
     const dynamicStyles = document.getElementById('dynamic-fonts');
 
-    // --- ২. ফন্ট লোড এবং কার্ড তৈরি করার লজিক ---
-    fonts.forEach(font => {
+    // ২. ম্যাজিক লজিক: ফন্ট লোড এবং মডার্ন কার্ড তৈরি
+    fonts.forEach((font, index) => {
         // ফন্ট ফ্যামিলি ইনজেক্ট করা
         dynamicStyles.innerHTML += `
             @font-face {
@@ -180,27 +234,40 @@
             }
         `;
 
-        // কার্ড এইচটিএমএল তৈরি করা
+        // কার্ড ডিজাইন
         const card = `
-            <div class="font-card">
-                <a href="fonts/${font.fileName}" class="top-download-btn" title="Download ${font.name}" download>📥</a>
+            <div class="font-card" style="animation-delay: ${index * 0.1}s">
+                <a href="fonts/${font.fileName}" class="top-download-btn" title="Download ${font.name}" download>
+                    <i class="fa-solid fa-cloud-arrow-down"></i>
+                </a>
                 <span class="font-name">${font.name}</span>
                 <div class="preview-box">
                     <div class="font-preview" style="font-family: '${font.name}', sans-serif;">${font.preview}</div>
                 </div>
-                <button class="copy-btn" onclick="copyLink('fonts/${font.fileName}')">🔗 Copy CDN Link</button>
+                <button class="copy-btn" onclick="copyLink('fonts/${font.fileName}')">
+                    <i class="fa-solid fa-link"></i> Copy CDN Link
+                </button>
             </div>
         `;
         fontContainer.innerHTML += card;
     });
 
-    // --- ৩. লিঙ্ক কপি করার ফাংশন ---
+    // ৩. টোস্ট বা অ্যালার্ট সহ কপি ফাংশন
     function copyLink(path) {
         const url = window.location.origin + window.location.pathname;
         const fullUrl = (url.endsWith('/') ? url : url + '/') + path;
         
         navigator.clipboard.writeText(fullUrl).then(() => {
-            alert('CDN Link Copied!');
+            // সুন্দর একটি টেম্পোরারি অ্যালার্ট
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+            btn.style.background = '#22c55e';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '#1e293b';
+            }, 2000);
         });
     }
 </script>
