@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bangla Fonts CDN - By Faisal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
+    <title>Bangla Fonts CDN - By Faysal</title>
+    
+    <style id="dynamic-fonts"></style> <style>
         :root {
             --primary: #2563eb;
             --bg: #f8fafc;
@@ -14,7 +14,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             margin: 0;
@@ -26,117 +26,182 @@
 
         .container {
             width: 90%;
-            max-width: 800px;
+            max-width: 900px;
             padding: 40px 20px;
             text-align: center;
         }
 
         h1 {
             font-weight: 800;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 10px;
             background: linear-gradient(to right, #2563eb, #7c3aed);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        p.subtitle {
-            color: #64748b;
-            margin-bottom: 40px;
-        }
-
         .font-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
         }
 
         .font-card {
             background: var(--card);
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
-            transition: transform 0.2s;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
             text-align: left;
-            border: 1px solid #e2e8f0;
+            border: 1px solid #f1f5f9;
+            position: relative;
         }
 
         .font-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-download-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #eff6ff;
+            color: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 20px;
+        }
+
+        .top-download-btn:hover {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
         }
 
         .font-name {
-            font-weight: 600;
-            font-size: 1.2rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #334155;
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        .preview-box {
+            background: #fdfdfd;
+            padding: 25px 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #f1f5f9;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .font-preview {
-            font-size: 1.5rem;
-            margin: 15px 0;
-            color: var(--primary);
+            font-size: 2.2rem;
+            width: 100%;
+            text-align: center;
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
         }
 
         .copy-btn {
-            background: #f1f5f9;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 600;
             width: 100%;
+            border: none;
+            background: #f1f5f9;
+            color: #475569;
+            padding: 12px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
             transition: all 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
         }
 
         .copy-btn:hover {
-            background: var(--primary);
+            background: #2563eb;
             color: white;
         }
 
         footer {
-            margin-top: 50px;
+            margin-top: 60px;
             font-size: 0.9rem;
             color: #94a3b8;
         }
-
-        a { color: var(--primary); text-decoration: none; font-weight: 600; }
+        footer a { color: var(--primary); text-decoration: none; font-weight: 600; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <h1>Bangla Fonts CDN</h1>
-    <p class="subtitle">Official CDN for <b>bangla_fonts</b> Flutter Package</p>
+    <p style="color: #64748b;">Official CDN for <b>bangla_fonts</b> Flutter Package</p>
 
-    <div class="font-grid">
-        <div class="font-card">
-            <span class="font-name">Kalpurush</span>
-            <div class="font-preview">আমার সোনার বাংলা</div>
-            <button class="copy-btn" onclick="copyLink('fonts/kalpurush.ttf')">Copy Direct Link</button>
+    <div class="font-grid" id="font-container">
         </div>
-
-        <div class="font-card">
-            <span class="font-name">Shadhinata</span>
-            <div class="font-preview">এবারে সংগ্রাম স্বাধীনতার সংগ্রাম</div>
-            <button class="copy-btn" onclick="copyLink('fonts/shadhinata.ttf')">Copy Direct Link</button>
-        </div>
-    </div>
 
     <footer>
-        Developed by <a href="https://github.com/oxfaysal">Faysal (Loomixdev)</a> 
+        Developed by <a href="https://github.com/oxfaysal"> Faysal (LoomixDev)</a> 
     </footer>
 </div>
 
 <script>
+    // --- ১. আপনার ফন্টের লিস্ট এখানে অ্যাড করুন ---
+    const fonts = [
+        { name: "Kalpurush", fileName: "kalpurush.ttf", preview: "আমার সোনার বাংলা" },
+        { name: "Shadhinata", fileName: "shadhinata.ttf", preview: "জয় বাংলা জয় বঙ্গবন্ধু" },
+        // নতুন ফন্ট অ্যাড করতে চাইলে নিচের লাইনটি কপি করে পেস্ট করুন:
+        // { name: "Nikosh", fileName: "nikosh.ttf", preview: "বাংলা আমাদের অহংকার" },
+    ];
+
+    const fontContainer = document.getElementById('font-container');
+    const dynamicStyles = document.getElementById('dynamic-fonts');
+
+    // --- ২. ফন্ট লোড এবং কার্ড তৈরি করার লজিক ---
+    fonts.forEach(font => {
+        // ফন্ট ফ্যামিলি ইনজেক্ট করা
+        dynamicStyles.innerHTML += `
+            @font-face {
+                font-family: '${font.name}';
+                src: url('fonts/${font.fileName}') format('truetype');
+            }
+        `;
+
+        // কার্ড এইচটিএমএল তৈরি করা
+        const card = `
+            <div class="font-card">
+                <a href="fonts/${font.fileName}" class="top-download-btn" title="Download ${font.name}" download>📥</a>
+                <span class="font-name">${font.name}</span>
+                <div class="preview-box">
+                    <div class="font-preview" style="font-family: '${font.name}', sans-serif;">${font.preview}</div>
+                </div>
+                <button class="copy-btn" onclick="copyLink('fonts/${font.fileName}')">🔗 Copy CDN Link</button>
+            </div>
+        `;
+        fontContainer.innerHTML += card;
+    });
+
+    // --- ৩. লিঙ্ক কপি করার ফাংশন ---
     function copyLink(path) {
-        const fullUrl = window.location.origin + window.location.pathname + path;
-        navigator.clipboard.writeText(fullUrl);
-        alert('Direct Link Copied: ' + fullUrl);
+        const url = window.location.origin + window.location.pathname;
+        const fullUrl = (url.endsWith('/') ? url : url + '/') + path;
+        
+        navigator.clipboard.writeText(fullUrl).then(() => {
+            alert('CDN Link Copied!');
+        });
     }
 </script>
 
